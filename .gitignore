@@ -27,8 +27,6 @@
 packages/
 *.nupkg
 *.snupkg
-
-# Keep NuGet config if present
 !packages/build/
 
 # =========================
