@@ -211,30 +211,29 @@ CREATE TABLE dbo.ForumComments (
 GO
 
 -- ── Reports ───────────────────────────────────────────────────────────────
-CREATE TABLE dbo.Reports (
-    ReportID          INT            IDENTITY(1,1) PRIMARY KEY,
-    ReporterID        INT            NOT NULL,
-    ReportedPostID    INT            NULL,
-    ReportedCommentID INT            NULL,
-    ReportType        NVARCHAR(20)   NOT NULL,   -- 'Post' | 'Comment'
-    ReportReason      NVARCHAR(100)  NOT NULL,   -- sensitive content / spam / harassment / false information
-    ReportComment     NVARCHAR(500)  NULL,
-    ReportDate        DATETIME       NOT NULL DEFAULT GETDATE(),
-    ReportStatus      NVARCHAR(20)   NOT NULL DEFAULT 'Pending', -- Pending / Reviewed / Rejected / ActionTaken
-    ReviewedByAdminID INT            NULL,
-    ReviewedDate      DATETIME       NULL,
-    CONSTRAINT FK_Reports_Reporter
-        FOREIGN KEY (ReporterID) REFERENCES dbo.Users(UserID),
-    CONSTRAINT FK_Reports_Post
-        FOREIGN KEY (ReportedPostID) REFERENCES dbo.ForumPosts(PostID),
-    CONSTRAINT FK_Reports_Comment
-        FOREIGN KEY (ReportedCommentID) REFERENCES dbo.ForumComments(CommentID),
-    CONSTRAINT FK_Reports_Admin
-        FOREIGN KEY (ReviewedByAdminID) REFERENCES dbo.Users(UserID),
-    CONSTRAINT CK_Reports_Type
-        CHECK (ReportType IN ('Post', 'Comment')),
-    CONSTRAINT CK_Reports_Status
-        CHECK (ReportStatus IN ('Pending', 'Reviewed', 'Rejected', 'ActionTaken'))
+CREATE TABLE Reports (
+    ReportID INT IDENTITY(1,1) PRIMARY KEY,
+
+    ReporterUserID INT NOT NULL,
+    ReportedPostID INT NULL,
+    ReportedCommentID INT NULL,
+
+    ReportType NVARCHAR(50) NOT NULL,  -- Post / Comment
+    Reason NVARCHAR(255) NOT NULL,
+    Explanation NVARCHAR(MAX) NULL,
+
+    ReportStatus NVARCHAR(50) NOT NULL DEFAULT 'Pending',
+
+    DateCreated DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (ReporterUserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ReportedPostID) REFERENCES ForumPosts(PostID),
+    FOREIGN KEY (ReportedCommentID) REFERENCES ForumComments(CommentID),
+
+    CONSTRAINT CK_Reports_Type CHECK (ReportType IN ('Post', 'Comment')),
+
+    CONSTRAINT CK_Reports_Status CHECK 
+    (ReportStatus IN ('Pending', 'ReviewedOnly', 'PostDeleted', 'CommentDeleted'))
 );
 GO
 
