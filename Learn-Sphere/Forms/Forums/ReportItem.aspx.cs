@@ -16,7 +16,13 @@ namespace Learn_Sphere.Forms.Forums
         {
             if (Session["UserID"] == null)
             {
-                Response.Redirect("~/Forms/Login.aspx");
+                Response.Redirect("~/Forms/Auth/Login.aspx");
+                return;
+            }
+
+            if (Session["Role"] != null && Session["Role"].ToString() == "Administrator")
+            {
+                Response.Redirect("~/Forms/Forums/Home.aspx");
                 return;
             }
 
@@ -37,7 +43,7 @@ namespace Learn_Sphere.Forms.Forums
         {
             if (!Page.IsValid) return;
 
-            int reporterId = Convert.ToInt32(Session["UserID"]);
+            int reporterUserId = Convert.ToInt32(Session["UserID"]);
             string reportType = txtReportType.Text.Trim();
 
             SqlParameter postParam = new SqlParameter("@ReportedPostID", DBNull.Value);
@@ -74,18 +80,18 @@ namespace Learn_Sphere.Forms.Forums
 
             string query = @"
                 INSERT INTO Reports
-                (ReporterID, ReportedPostID, ReportedCommentID, ReportType, ReportReason, ReportComment)
+                (ReporterUserID, ReportedPostID, ReportedCommentID, ReportType, Reason, Explanation)
                 VALUES
-                (@ReporterID, @ReportedPostID, @ReportedCommentID, @ReportType, @ReportReason, @ReportComment)";
+                (@ReporterUserID, @ReportedPostID, @ReportedCommentID, @ReportType, @Reason, @Explanation)";
 
             int rows = DatabaseHelper.ExecuteNonQuery(
                 query,
-                new SqlParameter("@ReporterID", reporterId),
+                new SqlParameter("@ReporterUserID", reporterUserId),
                 postParam,
                 commentParam,
                 new SqlParameter("@ReportType", reportType),
-                new SqlParameter("@ReportReason", ddlReason.SelectedValue),
-                new SqlParameter("@ReportComment", txtExplanation.Text.Trim())
+                new SqlParameter("@Reason", ddlReason.SelectedValue),
+                new SqlParameter("@Explanation", txtExplanation.Text.Trim())
             );
 
             if (rows > 0)

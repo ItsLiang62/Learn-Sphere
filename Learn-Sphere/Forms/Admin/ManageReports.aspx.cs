@@ -38,15 +38,15 @@ namespace Learn_Sphere.Forms.Admin
                     r.ReportID,
                     u.Username AS ReporterName,
                     r.ReportType,
-                    r.ReportReason,
-                    r.ReportComment,
-                    r.ReportDate,
+                    r.Reason,
+                    r.Explanation,
+                    r.DateCreated,
                     r.ReportStatus,
                     r.ReportedPostID,
                     r.ReportedCommentID
                 FROM Reports r
-                INNER JOIN Users u ON r.ReporterID = u.UserID
-                ORDER BY r.ReportDate DESC";
+                INNER JOIN Users u ON r.ReporterUserID = u.UserID
+                ORDER BY r.DateCreated DESC";
 
             DataTable dt = DatabaseHelper.ExecuteSelect(query);
             gvReports.DataSource = dt;
@@ -62,11 +62,8 @@ namespace Learn_Sphere.Forms.Admin
             {
                 DatabaseHelper.ExecuteNonQuery(
                     @"UPDATE Reports
-                      SET ReportStatus = 'ReviewedOnly',
-                          ReviewedByAdminID = @AdminID,
-                          ReviewedDate = GETDATE()
+                      SET ReportStatus = 'ReviewedOnly'
                       WHERE ReportID = @ReportID",
-                    new SqlParameter("@AdminID", adminId),
                     new SqlParameter("@ReportID", reportId)
                 );
 
@@ -130,12 +127,9 @@ namespace Learn_Sphere.Forms.Admin
 
                     DatabaseHelper.ExecuteNonQuery(
                         @"UPDATE Reports
-                          SET ReportStatus = @Status,
-                              ReviewedByAdminID = @AdminID,
-                              ReviewedDate = GETDATE()
+                          SET ReportStatus = @Status
                           WHERE ReportID = @ReportID",
                         new SqlParameter("@Status", newStatus),
-                        new SqlParameter("@AdminID", adminId),
                         new SqlParameter("@ReportID", reportId)
                     );
 

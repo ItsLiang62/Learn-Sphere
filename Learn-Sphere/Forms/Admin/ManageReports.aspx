@@ -92,9 +92,9 @@
                         <asp:BoundField DataField="ReportID" HeaderText="Report ID" />
                         <asp:BoundField DataField="ReporterName" HeaderText="Reporter" />
                         <asp:BoundField DataField="ReportType" HeaderText="Type" />
-                        <asp:BoundField DataField="ReportReason" HeaderText="Reason" />
-                        <asp:BoundField DataField="ReportComment" HeaderText="Explanation" />
-                        <asp:BoundField DataField="ReportDate" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy hh:mm tt}" />
+                        <asp:BoundField DataField="Reason" HeaderText="Reason" />
+                        <asp:BoundField DataField="Explanation" HeaderText="Explanation" />
+                        <asp:BoundField DataField="DateCreated" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy hh:mm tt}" />
                         <asp:BoundField DataField="ReportStatus" HeaderText="Status" />
 
                         <asp:TemplateField HeaderText="Actions">
