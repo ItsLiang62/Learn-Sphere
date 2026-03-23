@@ -46,6 +46,9 @@
     <Reference Include="BCrypt.Net-Next, Version=4.1.0.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.1.0\lib\net472\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
@@ -78,12 +81,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_Data\Learn_Sphere.sql" />
+    <Content Include="Forms\Admin\ManageReports.aspx" />
     <Content Include="Forms\Assessments\CreateQuiz.aspx" />
     <Content Include="Forms\Assessments\Home.aspx" />
     <Content Include="Forms\Assessments\TakeQuiz.aspx" />
@@ -91,7 +90,12 @@
     <Content Include="Forms\Auth\Login.aspx" />
     <Content Include="Forms\Auth\Register.aspx" />
     <Content Include="Forms\EduApp\ProcessEducatorApplications.aspx" />
+    <Content Include="Forms\Forums\CreatePost.aspx" />
+    <Content Include="Forms\Forums\Home.aspx" />
+    <Content Include="Forms\Forums\PostDetails.aspx" />
+    <Content Include="Forms\Forums\ReportItem.aspx" />
     <Content Include="Forms\Messaging\Messages.aspx" />
+    <Content Include="Forms\Profile\Notifications.aspx" />
     <Content Include="Forms\Profile\Profile.aspx" />
     <Content Include="Forms\Profile\ViewProfile.aspx" />
     <Content Include="Images\logo-dark-mode.png" />
@@ -101,6 +105,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\DatabaseHelper.cs" />
+    <Compile Include="Forms\Admin\ManageReports.aspx.cs">
+      <DependentUpon>ManageReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ManageReports.aspx.designer.cs">
+      <DependentUpon>ManageReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Assessments\CreateQuiz.aspx.cs">
       <DependentUpon>CreateQuiz.aspx</DependentUpon>
     </Compile>
@@ -149,12 +160,47 @@
     <Compile Include="Forms\EduApp\ProcessEducatorApplications.aspx.designer.cs">
       <DependentUpon>ProcessEducatorApplications.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Forums\CreatePost.aspx.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Forums\CreatePost.aspx.designer.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forums\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Forums\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forums\PostDetails.aspx.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Forums\PostDetails.aspx.designer.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forums\ReportItem.aspx.cs">
+      <DependentUpon>ReportItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Forums\ReportItem.aspx.designer.cs">
+      <DependentUpon>ReportItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Messaging\Messages.aspx.cs">
       <DependentUpon>Messages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\Messaging\Messages.aspx.designer.cs">
       <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profile\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Profile\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Profile\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

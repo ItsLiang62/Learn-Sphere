@@ -7,101 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Learn_Sphere.Shared
+namespace Learn_Sphere.Forms.Forums
 {
 
 
-    public partial class GlobalHeader
+    public partial class ReportItem
     {
 
         /// <summary>
-        /// hlHome control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlHome;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// imgLogo control.
+        /// GlobalHeader1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
+        protected global::Learn_Sphere.Shared.GlobalHeader GlobalHeader1;
 
         /// <summary>
-        /// hlResources control.
+        /// txtReportType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlResources;
+        protected global::System.Web.UI.WebControls.TextBox txtReportType;
 
         /// <summary>
-        /// hlForums control.
+        /// ddlReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlForums;
+        protected global::System.Web.UI.WebControls.DropDownList ddlReason;
 
         /// <summary>
-        /// hlAssessments control.
+        /// rfvReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAssessments;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvReason;
 
         /// <summary>
-        /// hlEducatorApps control.
+        /// txtExplanation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEducatorApps;
+        protected global::System.Web.UI.WebControls.TextBox txtExplanation;
 
         /// <summary>
-        /// hlManageReports control.
+        /// btnSubmitReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlManageReports;
+        protected global::System.Web.UI.WebControls.Button btnSubmitReport;
 
         /// <summary>
-        /// btnMessages control.
+        /// hlBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnMessages;
+        protected global::System.Web.UI.WebControls.HyperLink hlBack;
 
         /// <summary>
-        /// btnNotifications control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnNotifications;
-
-        /// <summary>
-        /// btnProfile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnProfile;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }
