@@ -46,8 +46,10 @@ namespace Learn_Sphere.Forms.Assessment
                            CASE WHEN s.QuizID IS NOT NULL THEN 1 ELSE 0 END AS IsSaved
                     FROM Quizzes q
                     INNER JOIN Users u ON u.UserID=q.EducatorID
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS QuestionCount FROM QuizQuestions GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS MyAttemptCount FROM QuizAttempts WHERE LearnerID=@UserID GROUP BY QuizID) my ON my.QuizID=q.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS QuestionCount FROM QuizQuestions
+                    GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS MyAttemptCount FROM QuizAttempts 
+                    WHERE LearnerID=@UserID GROUP BY QuizID) my ON my.QuizID=q.QuizID
                     LEFT JOIN SavedQuizzes s ON s.QuizID=q.QuizID AND s.UserID=@UserID
                     ORDER BY q.DateCreated DESC"
                 : @"
@@ -58,8 +60,10 @@ namespace Learn_Sphere.Forms.Assessment
                            'all' AS Scope, 0 AS IsSaved
                     FROM Quizzes q
                     INNER JOIN Users u ON u.UserID=q.EducatorID
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS QuestionCount FROM QuizQuestions GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS MyAttemptCount FROM QuizAttempts WHERE LearnerID=@UserID GROUP BY QuizID) my ON my.QuizID=q.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS QuestionCount FROM QuizQuestions 
+q                   GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS MyAttemptCount FROM QuizAttempts 
+                    WHERE LearnerID=@UserID GROUP BY QuizID) my ON my.QuizID=q.QuizID
                     ORDER BY q.DateCreated DESC";
             }
             else
@@ -228,7 +232,10 @@ namespace Learn_Sphere.Forms.Assessment
             if (role != "Administrator" && ownerID != userID) { LoadQuizzes(); return; }
 
             SqlParameter[] p = { new SqlParameter("@Q", quizID) };
-            DatabaseHelper.ExecuteNonQuery("DELETE FROM QuizAnswers  WHERE AttemptID IN (SELECT AttemptID FROM QuizAttempts WHERE QuizID=@Q)", p);
+            DatabaseHelper.ExecuteNonQuery(
+                "DELETE FROM QuizAnswers WHERE AttemptID IN (SELECT AttemptID FROM QuizAttempts WHERE QuizID=@Q)",
+                p
+            );
             DatabaseHelper.ExecuteNonQuery("DELETE FROM QuizAttempts WHERE QuizID=@Q", p);
             if (TableExists("SavedQuizzes"))
                 DatabaseHelper.ExecuteNonQuery("DELETE FROM SavedQuizzes WHERE QuizID=@Q", p);

@@ -109,11 +109,19 @@
 
             <h5 style="margin-top: 25px;">My Previous Applications</h5>
 
-            <asp:GridView ID="gvApplications" runat="server" AutoGenerateColumns="False" CssClass="status-table" Visible="false">
+            <asp:GridView 
+                ID="gvApplications" 
+                runat="server" 
+                AutoGenerateColumns="False" 
+                CssClass="status-table" 
+                Visible="false">
                 <Columns>
                     <asp:BoundField DataField="Qualification" HeaderText="Qualification" />
                     <asp:BoundField DataField="VerificationStatus" HeaderText="Status" />
-                    <asp:BoundField DataField="DateSubmitted" HeaderText="Submitted On" DataFormatString="{0:yyyy-MM-dd HH:mm}" />
+                    <asp:BoundField 
+                        DataField="DateSubmitted" 
+                        HeaderText="Submitted On" 
+                        DataFormatString="{0:yyyy-MM-dd HH:mm}" />
                 </Columns>
             </asp:GridView>
 

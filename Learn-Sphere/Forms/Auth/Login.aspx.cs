@@ -45,9 +45,7 @@ namespace Learn_Sphere.Forms.Auth
             Session["Username"] = row["Username"].ToString();
             Session["Role"] = row["Role"].ToString();
 
-            //Response.Redirect("~/Forms/EduApp/ProcessEducatorApplications.aspx");
             Response.Redirect("~/Forms/Assessments/Home.aspx");
-            //Response.Redirect("~/Forms/Assessments/CreateQuiz.aspx");
         }
     }
 }

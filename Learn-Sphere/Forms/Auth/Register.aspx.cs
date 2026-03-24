@@ -15,7 +15,9 @@ namespace Learn_Sphere.Forms.Auth
 
             lblMessage.ForeColor = System.Drawing.Color.Red;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(email) || 
+                string.IsNullOrEmpty(username) || 
+                string.IsNullOrEmpty(password))
             {
                 lblMessage.Text = "Please fill all fields";
                 return;

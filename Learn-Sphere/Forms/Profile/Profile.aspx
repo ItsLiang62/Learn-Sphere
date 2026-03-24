@@ -33,22 +33,50 @@
         }
         .hero-inner { position: relative; z-index: 1; }
 
-        .avatar-wrap { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg,var(--accent),var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; font-weight: 900; color: #fff; border: 4px solid rgba(255,255,255,0.15); flex-shrink: 0; }
+        .avatar-wrap { 
+            width: 100px; height: 100px; border-radius: 50%; 
+            background: linear-gradient(135deg,var(--accent),var(--accent2)); 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 2.4rem; font-weight: 900; color: #fff; 
+            border: 4px solid rgba(255,255,255,0.15); flex-shrink: 0; 
+        }
         .hero-user-info h2 { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
-        .role-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 3px 12px; border-radius: 50px; margin-top: 6px; }
-        .role-badge.learner       { background: rgba(0,212,170,0.2); color: var(--accent3); border: 1px solid rgba(0,212,170,0.3); }
-        .role-badge.educator      { background: rgba(91,79,255,0.2);  color: #a89bff;        border: 1px solid rgba(91,79,255,0.3); }
-        .role-badge.administrator { background: rgba(255,79,139,0.2); color: #ff8ab3;        border: 1px solid rgba(255,79,139,0.3); }
+        .role-badge { 
+            display: inline-block; font-size: 0.72rem; 
+            font-weight: 700; letter-spacing: 1.2px; 
+            text-transform: uppercase; padding: 3px 12px; 
+            border-radius: 50px; margin-top: 6px;
+        }
+        .role-badge.learner       { 
+            background: rgba(0,212,170,0.2); color: var(--accent3); 
+            border: 1px solid rgba(0,212,170,0.3); 
+        }
+        .role-badge.educator      { 
+            background: rgba(91,79,255,0.2);  color: #a89bff;       
+            border: 1px solid rgba(91,79,255,0.3);
+        }
+        .role-badge.administrator { 
+            background: rgba(255,79,139,0.2); color: #ff8ab3;        
+            border: 1px solid rgba(255,79,139,0.3); 
+        }
         .hero-user-info p.bio { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 8px; max-width: 500px; font-weight: 300; }
 
         .btn-logout { font-family: 'Roboto', sans-serif; font-size: 0.85rem; font-weight: 700; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); border-radius: 10px; padding: 9px 20px; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 7px; }
         .btn-logout:hover { background: rgba(255,79,139,0.2); border-color: var(--accent2); color: #fff; }
 
         .profile-main { padding: 40px 0 80px; }
-        .profile-layout { display: grid; grid-template-columns: 340px 1fr; gap: 24px; align-items: start; }
+        .profile-layout { 
+            display: grid; grid-template-columns: 340px 1fr; gap: 24px; 
+            align-items: start;
+        }
         @media (max-width:900px) { .profile-layout { grid-template-columns: 1fr; } }
 
-        .p-card { background: var(--card); border-radius: 18px; border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 20px; animation: fadeUp 0.35s ease both; }
+        .p-card { 
+            background: var(--card); border-radius: 18px; 
+            border: 1px solid var(--border); box-shadow: var(--shadow);
+            overflow: hidden; margin-bottom: 20px; 
+            animation: fadeUp 0.35s ease both;
+        }
         .p-card:nth-child(2){animation-delay:0.08s} .p-card:nth-child(3){animation-delay:0.14s}
         .p-card-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
         .p-card-header h5 { font-size: 0.95rem; font-weight: 700; margin: 0; }
@@ -56,8 +84,17 @@
         .p-card-body { padding: 24px; }
 
         .form-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: block; }
-        .form-field { font-family: 'Roboto', sans-serif; font-size: 0.9rem; border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 14px; width: 100%; color: var(--ink); background: var(--surface); transition: border-color 0.2s; margin-bottom: 16px; }
-        .form-field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(91,79,255,0.1); }
+        .form-field { 
+            font-family: 'Roboto', sans-serif; font-size: 0.9rem; 
+            border: 1.5px solid var(--border); border-radius: 10px; 
+            padding: 10px 14px; width: 100%; color: var(--ink); 
+            background: var(--surface); transition: border-color 0.2s; 
+            margin-bottom: 16px;
+        }
+        .form-field:focus { 
+            outline: none; border-color: var(--accent); 
+            box-shadow: 0 0 0 3px rgba(91,79,255,0.1); 
+        }
         textarea.form-field { resize: vertical; min-height: 90px; }
         .form-field[readonly] { background: #eeedf8; color: var(--muted); cursor: not-allowed; }
 
