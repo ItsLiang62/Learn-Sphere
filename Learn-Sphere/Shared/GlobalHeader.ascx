@@ -97,6 +97,7 @@
         <asp:HyperLink ID="hlForums" runat="server" NavigateUrl="~/Forms/Forums/Home.aspx">Forums</asp:HyperLink>
         <asp:HyperLink ID="hlAssessments" runat="server" NavigateUrl="~/Forms/Assessments/Home.aspx">Assessments</asp:HyperLink>
         <asp:HyperLink ID="hlEducatorApps" runat="server" NavigateUrl="~/Forms/EduApp/ProcessEducatorApplications.aspx" Visible="false">Educator Applications</asp:HyperLink>
+        <asp:HyperLink ID="hlManageReports" runat="server" NavigateUrl="~/Forms/Admin/ManageReports.aspx" Visible="false">Manage Reports</asp:HyperLink>
     </nav>
 
     <!-- Profile & Message icons -->
@@ -105,6 +106,10 @@
         <asp:LinkButton ID="btnMessages" runat="server" CssClass="icon-btn" OnClick="btnMessages_Click" ToolTip="Messages" >
             <i class="fa-solid fa-envelope"></i>
         </asp:LinkButton>
+
+            <asp:LinkButton ID="btnNotifications" runat="server" CssClass="icon-btn" OnClick="btnNotifications_Click" ToolTip="Notifications">
+        <i class="fa-solid fa-bell"></i>
+    </asp:LinkButton>
 
         <asp:LinkButton ID="btnProfile" runat="server" CssClass="icon-btn" OnClick="btnProfile_Click" ToolTip="Profile">
             <i class="fa-solid fa-user"></i>

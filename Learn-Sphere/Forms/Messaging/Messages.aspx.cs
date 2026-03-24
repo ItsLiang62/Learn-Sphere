@@ -50,6 +50,15 @@ namespace Learn_Sphere.Forms.Messaging
                             new SqlParameter("@R", targetID),
                             new SqlParameter("@C", content)
                         });
+                    string senderName = Session["Username"] != null ? Session["Username"].ToString() : "Someone";
+
+                    DatabaseHelper.ExecuteNonQuery(
+                        "INSERT INTO Notifications (UserID, NotificationContent, DateCreated, IsRead) VALUES (@UserID, @Content, GETDATE(), 0)",
+                        new[]
+                        {
+                            new SqlParameter("@UserID", targetID),
+                            new SqlParameter("@Content", senderName + " sent you a new private message.")
+                        });
                 }
             }
 

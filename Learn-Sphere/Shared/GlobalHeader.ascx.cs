@@ -13,6 +13,7 @@ namespace Learn_Sphere.Shared
             if (Session["Role"] != null && Session["Role"].ToString() == "Administrator")
             {
                 hlEducatorApps.Visible = true;
+                hlManageReports.Visible = true;
             }
 
             // Highlight the active module
@@ -30,6 +31,11 @@ namespace Learn_Sphere.Shared
         protected void btnProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Forms/Profile/Profile.aspx");
+        }
+
+        protected void btnNotifications_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Forms/Profile/Notifications.aspx");
         }
 
         protected void btnMessages_Click(object sender, EventArgs e)
