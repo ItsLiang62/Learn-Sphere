@@ -75,12 +75,15 @@ namespace Learn_Sphere.Forms.Profile
                     WITH QC AS (SELECT QuizID,COUNT(*) AS TotalQ FROM QuizQuestions GROUP BY QuizID)
                     SELECT COUNT(DISTINCT q.QuizID) AS QuizzesCreated,
                            COUNT(qa.AttemptID)       AS TotalAttempts,
-                           ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0 THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0) AS AvgScore
+                           ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0 
+                           THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0) AS AvgScore
                     FROM Quizzes q
                     LEFT JOIN QC qc ON qc.QuizID=q.QuizID
                     LEFT JOIN QuizAttempts qa ON qa.QuizID=q.QuizID
                     WHERE q.EducatorID=@UserID";
-                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { new SqlParameter("@UserID", userID) });
+                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { 
+                    new SqlParameter("@UserID", userID) 
+                });
                 if (dt.Rows.Count > 0)
                 {
                     DataRow r = dt.Rows[0];
@@ -98,9 +101,12 @@ namespace Learn_Sphere.Forms.Profile
                 string q = @"
                     SELECT COUNT(DISTINCT q.QuizID) AS TotalQuizzes,
                            COUNT(qa.AttemptID)       AS TotalAttempts,
-                           ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0 THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0) AS AvgScore
+                           ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0 
+                           THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0)
+                           AS AvgScore
                     FROM Quizzes q
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS TotalQ FROM QuizQuestions GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS TotalQ FROM QuizQuestions 
+                    GROUP BY QuizID) qc ON qc.QuizID=q.QuizID
                     LEFT JOIN QuizAttempts qa ON qa.QuizID=q.QuizID";
                 DataTable dt = DatabaseHelper.ExecuteSelect(q, null);
                 if (dt.Rows.Count > 0)
@@ -124,7 +130,9 @@ namespace Learn_Sphere.Forms.Profile
                     SELECT COUNT(*)               AS TotalAttempts,
                            COUNT(DISTINCT QuizID)  AS UniqueQuizzes
                     FROM QuizAttempts WHERE LearnerID=@UserID";
-                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { new SqlParameter("@UserID", userID) });
+                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { 
+                    new SqlParameter("@UserID", userID) 
+                });
                 if (dt.Rows.Count > 0)
                 {
                     DataRow r = dt.Rows[0];
@@ -133,9 +141,11 @@ namespace Learn_Sphere.Forms.Profile
                 }
 
                 object avgObj = DatabaseHelper.ExecuteScalar(@"
-                    SELECT ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0 THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0)
+                    SELECT ISNULL(CAST(ROUND(AVG(CASE WHEN ISNULL(qc.TotalQ,0)>0
+                    THEN 100.0*qa.Score/qc.TotalQ ELSE NULL END),0) AS INT),0)
                     FROM QuizAttempts qa
-                    LEFT JOIN (SELECT QuizID,COUNT(*) AS TotalQ FROM QuizQuestions GROUP BY QuizID) qc ON qc.QuizID=qa.QuizID
+                    LEFT JOIN (SELECT QuizID,COUNT(*) AS TotalQ FROM QuizQuestions
+                    GROUP BY QuizID) qc ON qc.QuizID=qa.QuizID
                     WHERE qa.LearnerID=@UserID",
                     new[] { new SqlParameter("@UserID", userID) });
                 lblStatAvg.Text = (avgObj ?? "0") + "%";

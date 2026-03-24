@@ -197,9 +197,15 @@
         }
         .btn-prev { background: var(--border); color: var(--muted); }
         .btn-prev:hover { background: #dad8f7; color: var(--ink); }
-        .btn-next { background: linear-gradient(135deg, var(--accent), #7c6fff); color: #fff; box-shadow: 0 4px 16px rgba(91,79,255,0.35); }
+        .btn-next { 
+            background: linear-gradient(135deg, var(--accent), #7c6fff); 
+            color: #fff; box-shadow: 0 4px 16px rgba(91,79,255,0.35);
+        }
         .btn-next:hover { opacity: 0.88; transform: translateY(-1px); }
-        .btn-submit { background: linear-gradient(135deg, var(--accent2), #ff7eb3); color: #fff; box-shadow: 0 4px 16px rgba(255,79,139,0.35); }
+        .btn-submit { 
+            background: linear-gradient(135deg, var(--accent2), #ff7eb3); 
+            color: #fff; box-shadow: 0 4px 16px rgba(255,79,139,0.35); 
+        }
         .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
 
         /* ─── QUESTION DOTS ─── */

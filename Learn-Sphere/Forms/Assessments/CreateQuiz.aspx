@@ -29,17 +29,42 @@
 
         .card-quiz h3 { font-weight: 600; color: #4b4bff; margin-bottom: 20px; }
 
-        .btn-primary { background: linear-gradient(90deg, #4b4bff, #667eea); border: none; font-weight: 600; padding: 10px 25px; border-radius: 8px; color: #fff; transition: 0.3s; }
+        .btn-primary { 
+            background: linear-gradient(90deg, #4b4bff, #667eea); 
+            border: none; font-weight: 600; padding: 10px 25px; 
+            border-radius: 8px; color: #fff; transition: 0.3s; 
+        }
         .btn-primary:hover { background: linear-gradient(90deg, #667eea, #764ba2); }
 
-        .btn-back { background: #f5f5f5; border: none; color: #333; font-weight: 500; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; }
+        .btn-back { 
+            background: #f5f5f5; border: none; color: #333; 
+            font-weight: 500; padding: 10px 20px; border-radius: 8px; 
+            margin-bottom: 20px; 
+        }
 
-        .question-card { background: #f7f7ff; border-radius: 10px; padding: 20px; margin-bottom: 15px; border-left: 5px solid #4b4bff; }
+        .question-card { 
+            background: #f7f7ff; 
+            border-radius: 10px; 
+            padding: 20px; margin-bottom: 15px; 
+            border-left: 5px solid #4b4bff;
+        }
         .option-input { margin-bottom: 10px; }
-        .option-input input[type="radio"] { accent-color: #4b4bff; margin-right: 6px; }
-        .text-gradient { background: linear-gradient(90deg, #4b4bff, #667eea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
-        .remove-question { float: right; color: #dc3545; cursor: pointer; font-size: 0.9rem; }
-        .remove-question:hover { text-decoration: underline; }
+        .option-input input[type="radio"] { 
+            accent-color: #4b4bff; margin-right: 6px; 
+        }
+        .text-gradient { 
+            background: linear-gradient(90deg, #4b4bff, #667eea); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            font-weight: 700; 
+        }
+        .remove-question { 
+            float: right; color: #dc3545; 
+            cursor: pointer; font-size: 0.9rem;
+        }
+        .remove-question:hover { 
+            text-decoration: underline; 
+        }
     </style>
 </head>
 

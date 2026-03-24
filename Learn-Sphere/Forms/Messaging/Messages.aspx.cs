@@ -70,16 +70,16 @@ namespace Learn_Sphere.Forms.Messaging
                 new[] { new SqlParameter("@T", them), new SqlParameter("@M", me) });
 
             string query = @"
-        SELECT m.MessageID, m.SenderID, m.MessageContent AS Content, m.DateSent AS SentAt,
-               su.Username                AS SenderUsername,
-               su.Role                    AS SenderRole,
-               ISNULL(sp.FullName,'')     AS SenderFullName
-        FROM   Messages m
-        INNER JOIN Users    su ON su.UserID = m.SenderID
-        LEFT  JOIN Profiles sp ON sp.UserID = m.SenderID
-        WHERE  (m.SenderID=@M AND m.ReceiverID=@T)
-            OR (m.SenderID=@T AND m.ReceiverID=@M)
-        ORDER  BY m.DateSent ASC";
+               SELECT m.MessageID, m.SenderID, m.MessageContent AS Content, m.DateSent AS SentAt,
+               su.Username AS SenderUsername,
+               su.Role AS SenderRole,
+               ISNULL(sp.FullName,'') AS SenderFullName
+               FROM Messages m
+               INNER JOIN Users su ON su.UserID = m.SenderID
+               LEFT JOIN Profiles sp ON sp.UserID = m.SenderID
+               WHERE (m.SenderID=@M AND m.ReceiverID=@T)
+               OR (m.SenderID=@T AND m.ReceiverID=@M)
+               ORDER BY m.DateSent ASC";
 
             DataTable dt = DatabaseHelper.ExecuteSelect(query,
                 new[] { new SqlParameter("@M", me), new SqlParameter("@T", them) });

@@ -46,7 +46,9 @@ namespace Learn_Sphere.Forms.Auth
             string username = Session["Username"]?.ToString();
             string passwordHash = Session["PasswordHash"]?.ToString();
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(passwordHash))
+            if (string.IsNullOrEmpty(email) || 
+                string.IsNullOrEmpty(username) || 
+                string.IsNullOrEmpty(passwordHash))
             {
                 lblMessage.ForeColor = System.Drawing.Color.Red;
                 lblMessage.Text = "Session expired. Please register again.";

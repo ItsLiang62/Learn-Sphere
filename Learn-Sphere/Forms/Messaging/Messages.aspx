@@ -109,16 +109,30 @@
 
         .msg-row { display: flex; align-items: flex-end; gap: 7px; }
         .msg-row.mine   { flex-direction: row-reverse; }
-        .msg-av { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: #fff; }
+        .msg-av { 
+            width: 26px; height: 26px; border-radius: 50%; 
+            flex-shrink: 0; display: flex; align-items: center; 
+            justify-content: center; font-size: 0.65rem;
+            font-weight: 700; color: #fff;
+        }
         .msg-wrap-inner { max-width: 62%; display: flex; flex-direction: column; }
         .msg-row.mine   .msg-wrap-inner { align-items: flex-end; }
         .msg-row.theirs .msg-wrap-inner { align-items: flex-start; }
-        .msg-bubble { font-size: 0.875rem; padding: 9px 13px; border-radius: 16px; line-height: 1.45; word-break: break-word; }
+        .msg-bubble { 
+            font-size: 0.875rem; padding: 9px 13px; border-radius: 16px; 
+            line-height: 1.45; word-break: break-word; 
+        }
         .msg-row.mine   .msg-bubble { background: var(--bubble-me); color: #fff; border-bottom-right-radius: 3px; }
-        .msg-row.theirs .msg-bubble { background: var(--bubble-them); color: var(--ink); border-bottom-left-radius: 3px; }
+        .msg-row.theirs .msg-bubble { 
+            background: var(--bubble-them); color: var(--ink); border-bottom-left-radius: 3px;
+        }
         .msg-meta { font-size: 0.65rem; color: var(--muted); margin-top: 3px; padding: 0 3px; }
         .date-sep { text-align: center; margin: 6px 0; }
-        .date-sep span { font-size: 0.7rem; font-weight: 600; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 50px; padding: 2px 10px; }
+        .date-sep span { 
+            font-size: 0.7rem; font-weight: 600; color: var(--muted); 
+            background: var(--surface); border: 1px solid var(--border); 
+            border-radius: 50px; padding: 2px 10px; 
+        }
 
         .chat-input-area { padding: 14px 20px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; }
         .chat-input { font-family: 'Roboto', sans-serif; font-size: 0.88rem; flex: 1; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--ink); resize: none; max-height: 110px; overflow-y: auto; line-height: 1.4; }
