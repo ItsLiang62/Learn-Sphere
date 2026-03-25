@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Learn_Sphere.Forms.Profile
+namespace Learn_Sphere.Forms.Resources
 {
 
 
-    public partial class Profile
+    public partial class Home
     {
 
         /// <summary>
@@ -33,192 +33,156 @@ namespace Learn_Sphere.Forms.Profile
         protected global::Learn_Sphere.Shared.GlobalHeader GlobalHeader1;
 
         /// <summary>
-        /// hfRole control.
+        /// litHeroTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfRole;
+        protected global::System.Web.UI.WebControls.Literal litHeroTitle;
 
         /// <summary>
-        /// hfHandlerUrl control.
+        /// litHeroSubtitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfHandlerUrl;
+        protected global::System.Web.UI.WebControls.Literal litHeroSubtitle;
 
         /// <summary>
-        /// lblAvatar control.
+        /// hlCreateResource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAvatar;
+        protected global::System.Web.UI.WebControls.HyperLink hlCreateResource;
 
         /// <summary>
-        /// lblDisplayName control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDisplayName;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// lblRoleBadge control.
+        /// pnlFilterToolbar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRoleBadge;
+        protected global::System.Web.UI.WebControls.Panel pnlFilterToolbar;
 
         /// <summary>
-        /// lblBioPreview control.
+        /// ddlCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBioPreview;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
 
         /// <summary>
-        /// btnLogout control.
+        /// pnlBookmarks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
+        protected global::System.Web.UI.WebControls.Panel pnlBookmarks;
 
         /// <summary>
-        /// txtFullName control.
+        /// litBookmarksTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFullName;
+        protected global::System.Web.UI.WebControls.Literal litBookmarksTitle;
 
         /// <summary>
-        /// txtUsername control.
+        /// btnToggleManageBookmarks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.Button btnToggleManageBookmarks;
 
         /// <summary>
-        /// txtEmail control.
+        /// rptBookmarks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Repeater rptBookmarks;
 
         /// <summary>
-        /// txtBio control.
+        /// pnlNoBookmarks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBio;
+        protected global::System.Web.UI.WebControls.Panel pnlNoBookmarks;
 
         /// <summary>
-        /// btnSaveProfile control.
+        /// pnlAllResourcesSection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveProfile;
+        protected global::System.Web.UI.WebControls.Panel pnlAllResourcesSection;
 
         /// <summary>
-        /// lblMsg control.
+        /// pnlAdminTools control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.Panel pnlAdminTools;
 
         /// <summary>
-        /// lblStatAttempts control.
+        /// btnToggleManageResources control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatAttempts;
+        protected global::System.Web.UI.WebControls.Button btnToggleManageResources;
 
         /// <summary>
-        /// lblStatSaved control.
+        /// hlRecycleBin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatSaved;
+        protected global::System.Web.UI.WebControls.HyperLink hlRecycleBin;
 
         /// <summary>
-        /// lblStatSavedLabel control.
+        /// rptResources control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatSavedLabel;
+        protected global::System.Web.UI.WebControls.Repeater rptResources;
 
         /// <summary>
-        /// lblStatQuizzes control.
+        /// pnlNoResources control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatQuizzes;
-
-        /// <summary>
-        /// lblStatQuizzesLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatQuizzesLabel;
-
-        /// <summary>
-        /// lblStatAvg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatAvg;
-
-        /// <summary>
-        /// lblMemberSince control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemberSince;
-
-        /// <summary>
-        /// lblEmailInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmailInfo;
+        protected global::System.Web.UI.WebControls.Panel pnlNoResources;
     }
 }

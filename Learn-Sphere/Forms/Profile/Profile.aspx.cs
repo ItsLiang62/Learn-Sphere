@@ -81,8 +81,8 @@ namespace Learn_Sphere.Forms.Profile
                     LEFT JOIN QC qc ON qc.QuizID=q.QuizID
                     LEFT JOIN QuizAttempts qa ON qa.QuizID=q.QuizID
                     WHERE q.EducatorID=@UserID";
-                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { 
-                    new SqlParameter("@UserID", userID) 
+                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] {
+                    new SqlParameter("@UserID", userID)
                 });
                 if (dt.Rows.Count > 0)
                 {
@@ -130,8 +130,8 @@ namespace Learn_Sphere.Forms.Profile
                     SELECT COUNT(*)               AS TotalAttempts,
                            COUNT(DISTINCT QuizID)  AS UniqueQuizzes
                     FROM QuizAttempts WHERE LearnerID=@UserID";
-                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] { 
-                    new SqlParameter("@UserID", userID) 
+                DataTable dt = DatabaseHelper.ExecuteSelect(q, new[] {
+                    new SqlParameter("@UserID", userID)
                 });
                 if (dt.Rows.Count > 0)
                 {

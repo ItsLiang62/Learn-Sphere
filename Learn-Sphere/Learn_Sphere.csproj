@@ -98,6 +98,11 @@
     <Content Include="Forms\Profile\Notifications.aspx" />
     <Content Include="Forms\Profile\Profile.aspx" />
     <Content Include="Forms\Profile\ViewProfile.aspx" />
+    <Content Include="Forms\Resources\CreateResource.aspx" />
+    <Content Include="Forms\Resources\Home.aspx" />
+    <Content Include="Forms\Resources\RecycleBin.aspx" />
+    <Content Include="Forms\Resources\ReportResource.aspx" />
+    <Content Include="Forms\Resources\ResourceDetails.aspx" />
     <Content Include="Images\logo-dark-mode.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Shared\GlobalHeader.ascx" />
@@ -215,6 +220,41 @@
     </Compile>
     <Compile Include="Forms\Profile\ViewProfile.aspx.designer.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\CreateResource.aspx.cs">
+      <DependentUpon>CreateResource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Resources\CreateResource.aspx.designer.cs">
+      <DependentUpon>CreateResource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Resources\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\RecycleBin.aspx.cs">
+      <DependentUpon>RecycleBin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Resources\RecycleBin.aspx.designer.cs">
+      <DependentUpon>RecycleBin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\ReportResource.aspx.cs">
+      <DependentUpon>ReportResource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Resources\ReportResource.aspx.designer.cs">
+      <DependentUpon>ReportResource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Resources\ResourceDetails.aspx.cs">
+      <DependentUpon>ResourceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Resources\ResourceDetails.aspx.designer.cs">
+      <DependentUpon>ResourceDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\GlobalHeader.ascx.cs">
