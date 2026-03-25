@@ -335,3 +335,68 @@ VALUES (
     'Administrator'
 );
 GO
+
+-- ═══════════════════════════════════════════════════════════════════════════
+--  RESOURCES TABLES
+-- ═══════════════════════════════════════════════════════════════════════════
+
+CREATE TABLE ResourceCategories (
+    CategoryID INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName NVARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE Resources (
+    ResourceID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT NOT NULL,
+    CategoryID INT NOT NULL,
+    Title NVARCHAR(200) NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL,
+    ResourceLink NVARCHAR(500) NOT NULL,
+    DatePosted DATETIME NOT NULL DEFAULT GETDATE(),
+    IsDeleted BIT NOT NULL DEFAULT 0,
+    DeletedByAdminID INT NULL,
+    DeletedDate DATETIME NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (CategoryID) REFERENCES ResourceCategories(CategoryID)
+);
+
+CREATE TABLE ResourceBookmarks (
+    BookmarkID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT NOT NULL,
+    ResourceID INT NOT NULL,
+    DateBookmarked DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ResourceID) REFERENCES Resources(ResourceID),
+    CONSTRAINT UQ_ResourceBookmarks UNIQUE (UserID, ResourceID)
+);
+
+CREATE TABLE ResourceRatings (
+    RatingID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT NOT NULL,
+    ResourceID INT NOT NULL,
+    RatingValue INT NOT NULL CHECK (RatingValue BETWEEN 1 AND 5),
+    DateRated DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ResourceID) REFERENCES Resources(ResourceID),
+    CONSTRAINT UQ_ResourceRatings UNIQUE (UserID, ResourceID)
+);
+
+CREATE TABLE ResourceReports (
+    ResourceReportID INT PRIMARY KEY IDENTITY(1,1),
+    ReporterUserID INT NOT NULL,
+    ResourceID INT NOT NULL,
+    Reason NVARCHAR(100) NOT NULL,
+    Explanation NVARCHAR(500) NULL,
+    ReportStatus NVARCHAR(50) NOT NULL DEFAULT 'Pending',
+    ReportDate DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (ReporterUserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ResourceID) REFERENCES Resources(ResourceID)
+);
+GO
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Programming');
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Database');
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Web Development');
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Artificial Intelligence');
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Mathematics');
+INSERT INTO ResourceCategories (CategoryName) VALUES ('Other');
+GO

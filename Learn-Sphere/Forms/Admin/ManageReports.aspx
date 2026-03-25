@@ -67,6 +67,29 @@
             border: 1px solid #ddd;
             background: #fff;
         }
+        .badge-type {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .type-post {
+            background: #eef2ff;
+            color: #4f46e5;
+        }
+        .type-comment {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+        .type-resource {
+            background: #f3e8ff;
+            color: #7e22ce;
+        }
+        .small-text {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -76,7 +99,7 @@
         <div class="page-hero">
             <div class="container">
                 <h1 class="page-title">Manage Reports</h1>
-                <p class="page-subtitle">Review and remove reported forum content.</p>
+                <p class="page-subtitle">Review and remove reported forum content and learning resources.</p>
             </div>
         </div>
 
@@ -89,11 +112,26 @@
                     AutoGenerateColumns="false"
                     OnRowCommand="gvReports_RowCommand">
                     <Columns>
-                        <asp:BoundField DataField="ReportID" HeaderText="Report ID" />
+                        <asp:BoundField DataField="UnifiedReportID" HeaderText="Report ID" />
                         <asp:BoundField DataField="ReporterName" HeaderText="Reporter" />
-                        <asp:BoundField DataField="ReportType" HeaderText="Type" />
+
+                        <asp:TemplateField HeaderText="Type">
+                            <ItemTemplate>
+                                <span class='badge-type <%# GetTypeCss(Eval("ReportType").ToString()) %>'>
+                                    <%# Eval("ReportType") %>
+                                </span>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                         <asp:BoundField DataField="Reason" HeaderText="Reason" />
                         <asp:BoundField DataField="Explanation" HeaderText="Explanation" />
+
+                        <asp:TemplateField HeaderText="Reported Item">
+                            <ItemTemplate>
+                                <span><%# Eval("ReportedItemTitle") %></span>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                         <asp:BoundField DataField="DateCreated" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy hh:mm tt}" />
                         <asp:BoundField DataField="ReportStatus" HeaderText="Status" />
 
@@ -102,13 +140,13 @@
                                 <asp:Button ID="btnReviewed" runat="server"
                                     Text="Reviewed"
                                     CommandName="MarkReviewed"
-                                    CommandArgument='<%# Eval("ReportID") %>'
+                                    CommandArgument='<%# Eval("CommandArgumentValue") %>'
                                     CssClass="action-btn me-1" />
 
                                 <asp:Button ID="btnDelete" runat="server"
                                     Text="Delete Item"
                                     CommandName="DeleteItem"
-                                    CommandArgument='<%# Eval("ReportID") %>'
+                                    CommandArgument='<%# Eval("CommandArgumentValue") %>'
                                     CssClass="action-btn" />
                             </ItemTemplate>
                         </asp:TemplateField>
